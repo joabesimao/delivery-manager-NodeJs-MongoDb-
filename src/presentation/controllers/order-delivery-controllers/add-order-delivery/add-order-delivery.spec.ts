@@ -107,25 +107,10 @@ describe("addOrderDelivery Controller", () => {
     const fakeRequest = makeFakeRequest();
     await sut.handle(fakeRequest);
     expect(addRegisterSpy).toHaveBeenCalledWith({
-      registerId: 1,
       amount: 1,
       data: new Date("2022-10-10T00:00:00.000Z"),
       quantity: "12",
-      register: {
-        address: {
-          city: "any_city",
-          neighborhood: "any_neighborhood",
-          numberHouse: 123,
-          reference: "any_reference",
-          street: "any_street",
-        },
-        client: {
-          lastName: "any_last_name",
-          name: "any_name",
-          phone: "any_phone",
-        },
-        id: 1,
-      },
+      registerId: undefined,
     });
   });
 
