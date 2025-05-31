@@ -65,12 +65,7 @@ const makeValidation = (): Validation => {
 const makeSut = (): SutTypes => {
   const addRegisterStub = makeAddRegisterStub();
   const validationStub = makeValidation();
-  const sut = new AddRegisterController(
-    addRegisterStub,
-    validationStub,
-    validationStub,
-    validationStub
-  );
+  const sut = new AddRegisterController(addRegisterStub);
   return {
     sut,
     addRegisterStub,
@@ -115,42 +110,5 @@ describe("addRegister Controller", () => {
     const { sut } = makeSut();
     const httpResponse = await sut.handle(makeFakeRequest());
     expect(httpResponse).toEqual(ok(makeFakeRegisterModel()));
-  });
-
-  test("Should return validation with correct value ", async () => {
-    const { sut, validationStub } = makeSut();
-    const validationSpy = jest.spyOn(validationStub, "validate");
-
-    const fakeRequest: HttpRequest = {
-      body: {
-        client: {
-          name: "any_name",
-          lastName: "any_last_name",
-          phone: "any_phone",
-        },
-        address: {
-          street: "any_street",
-          neighborhood: "any_neighborhood",
-          numberHouse: 123,
-          reference: "any_reference",
-          city: "any_city",
-        },
-      },
-    };
-    await sut.handle(fakeRequest);
-    expect(validationSpy).toHaveBeenCalledWith({
-      client: {
-        name: "any_name",
-        lastName: "any_last_name",
-        phone: "any_phone",
-      },
-      address: {
-        street: "any_street",
-        neighborhood: "any_neighborhood",
-        numberHouse: 123,
-        reference: "any_reference",
-        city: "any_city",
-      },
-    });
   });
 });
