@@ -13,9 +13,6 @@ export class DeleteAccountController implements Controller {
       );
       return ok(account);
     } catch (error) {
-      if (error instanceof Prisma.PrismaClientKnownRequestError) {
-        return noExists();
-      }
       return serverError(error);
     }
   }

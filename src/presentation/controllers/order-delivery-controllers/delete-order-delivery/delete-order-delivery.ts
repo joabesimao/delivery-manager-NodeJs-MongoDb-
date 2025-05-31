@@ -13,9 +13,6 @@ export class DeleteOrderDeliveryController implements Controller {
       );
       return ok(result);
     } catch (error) {
-      if (error instanceof Prisma.PrismaClientKnownRequestError) {
-        return noExists();
-      }
       return serverError(error);
     }
   }
