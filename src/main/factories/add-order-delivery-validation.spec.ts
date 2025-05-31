@@ -1,4 +1,4 @@
-/* import {
+import {
   ValidationComposite,
   RequireFieldsValidation,
 } from "../../presentation/helpers/validators";
@@ -18,4 +18,3 @@ describe("Add Order validation Factory", () => {
     expect(ValidationComposite).toHaveBeenCalledWith(validations);
   });
 });
- */
