@@ -13,9 +13,6 @@ export class DeleteClientController implements Controller {
       );
       return ok(deletedClient);
     } catch (error) {
-      if (error instanceof Prisma.PrismaClientKnownRequestError) {
-        return noExists();
-      }
       return serverError(error);
     }
   }
