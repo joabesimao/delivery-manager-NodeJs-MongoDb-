@@ -4,5 +4,5 @@ export interface OrderDeliveryModel {
   register: RegisterModel;
   quantity: string;
   amount: number;
-  data: Date;
+  data?: Date;
 }
