@@ -59,13 +59,15 @@ export class OrderDeliveryMongoRepository
   async addOrderOfDelivery(
     orderOfDelivery: AddOrderDeliveryModel
   ): Promise<OrderDeliveryModel> {
+    const id = new ObjectId(orderOfDelivery.registerId);
     const orderDeliveryCollection = await MongoHelper.getCollection(
       "orderDeliverys"
     );
-
     const registerCollection = await MongoHelper.getCollection("registers");
-    const reg = await registerCollection.findOne({});
-    const result = await orderDeliveryCollection.insertOne({
+    const reg = await registerCollection.findOne({
+      _id: id,
+    });
+    await orderDeliveryCollection.insertOne({
       register: reg,
       info: orderOfDelivery,
     });
@@ -74,7 +76,7 @@ export class OrderDeliveryMongoRepository
       register: reg as any,
       quantity: orderOfDelivery.quantity,
       amount: orderOfDelivery.amount,
-      data: orderOfDelivery.data,
+      data: new Date(),
     };
     return orderDeliveryCreated;
   }

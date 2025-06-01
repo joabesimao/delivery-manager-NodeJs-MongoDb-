@@ -4,7 +4,7 @@ export interface AddOrderDeliveryModel {
   registerId: number;
   quantity: string;
   amount: number;
-  data: Date;
+  data?: Date;
 }
 
 export interface AddOrderDelivery {
