@@ -15,7 +15,7 @@ Register API for register of clients
 
 # Requirements
 
-To create a mysqldump for this project database run:
+To create a MongoDb for this project database run:
 ``
 
 
