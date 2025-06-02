@@ -1,20 +1,6 @@
-import {
-  AddRegister,
-  AddRegisterModel,
-} from "../../../../domain/usescases/register/add-register";
 import { AddAddressController } from "./add-address";
 import { HttpRequest } from "../../../protocols/http";
 import { ok, serverError } from "../../../helpers/http/http-helper";
-import { Validation } from "../../../protocols/validation";
-import { RegisterModel } from "../../../../domain/models/register/register-model";
-import {
-  Client,
-  ClientModel,
-} from "../../../../domain/models/client/client-model";
-import {
-  AddClient,
-  AddClientModel,
-} from "../../../../domain/usescases/client/add-client";
 import { Address } from "../../../../domain/models/register/address-model";
 import {
   AddAddress,
