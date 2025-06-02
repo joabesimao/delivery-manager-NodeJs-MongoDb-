@@ -72,6 +72,7 @@ const makeSut = (): SutTypes => {
     validationStub,
   };
 };
+
 describe("addRegister Controller", () => {
   test("Should call addRegister with correct values", async () => {
     const { sut, addRegisterStub } = makeSut();
