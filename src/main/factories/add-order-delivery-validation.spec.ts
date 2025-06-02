@@ -12,6 +12,7 @@ describe("Add Order validation Factory", () => {
     makeAddOrderDeliveryValidation();
     const validations: Validation[] = [];
     for (const field of ["amount", "quantity"]) {
+
       validations.push(new RequireFieldsValidation(field));
     }
 

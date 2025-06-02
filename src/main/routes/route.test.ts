@@ -4,7 +4,7 @@ import { MongoHelper } from "../../infra/db/mongodb/helpers/mongo-helper";
 import { Collection } from "mongodb";
 import { hash } from "bcrypt";
 import { sign } from "jsonwebtoken";
-import env from "../../env";
+import env from "../../../env";
 
 let collection: Collection;
 let accountCollection: Collection;
