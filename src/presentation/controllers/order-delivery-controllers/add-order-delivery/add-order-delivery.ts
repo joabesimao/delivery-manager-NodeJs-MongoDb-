@@ -16,11 +16,11 @@ export class AddOrderDeliveryController implements Controller {
         return badRequest(error);
       }
 
-      const { amount, data, quantity, registerId } = httpRequest.body;
+      const { amount, quantity, registerId } = httpRequest.body;
       const orderDelivery = await this.addOrderDelivery.addOrderDelivery({
         registerId: registerId,
         amount: amount,
-        data: data,
+        data: new Date(),
         quantity: quantity,
       });
       return ok(orderDelivery);
