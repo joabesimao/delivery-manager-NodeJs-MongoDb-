@@ -1,8 +1,7 @@
 import { Controller } from "../../../protocols/controller";
 import { HttpRequest, HttpResponse } from "../../../protocols/http";
 import { DeleteAccount } from "../../../../domain/usescases/signup/delete-account";
-import { noExists, ok, serverError } from "../../../helpers/http/http-helper";
-import { Prisma } from "@prisma/client";
+import { ok, serverError } from "../../../helpers/http/http-helper";
 
 export class DeleteAccountController implements Controller {
   constructor(private readonly deleteAccount: DeleteAccount) {}
