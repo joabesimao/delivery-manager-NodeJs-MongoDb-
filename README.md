@@ -22,7 +22,7 @@ To create a mysqldump for this project database run:
 # Installation
 
 To install this project, run the following commands:
-`gh repo clone joabesimao/Register`
+`gh repo clone joabesimao/delivery-manager-NodeJs-MongoDb-`
 
 - For npm users
   `npm install`
@@ -65,7 +65,7 @@ To execute this project tests, you must run the following commands:
 
 then access then [/docs route](http://localhost:3000/docs)
 
-`http://localhost:5050/register`
+`http://localhost:3306/register`
 
 #Docker 
 
