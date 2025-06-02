@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "./dist",
     "module": "commonJS",
     "target": "es2019",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "allowJs":true
   },
-  "include": ["src", "src/infra/db/mysql/helpers/index.ts", "src/presentation/errors/no-exists-error.ts"],
+  "include": ["src", "src/infra/db/mongodb/helpers/mongo-helper.ts"],
   "exclude": ["**/*.spec.ts", "**/*.test.ts"]
 }
