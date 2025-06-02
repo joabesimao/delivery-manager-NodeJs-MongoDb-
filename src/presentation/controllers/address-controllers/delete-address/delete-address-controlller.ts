@@ -1,6 +1,5 @@
-import { Prisma } from "@prisma/client";
 import { DeleteAddress } from "../../../../domain/usescases/address/delete-address";
-import { noExists, ok, serverError } from "../../../helpers/http/http-helper";
+import { ok, serverError } from "../../../helpers/http/http-helper";
 import { Controller } from "../../../protocols/controller";
 import { HttpRequest, HttpResponse } from "../../../protocols/http";
 
@@ -13,9 +12,6 @@ export class DeleteAddressController implements Controller {
       );
       return ok(deleteAddress);
     } catch (error) {
-      if (error instanceof Prisma.PrismaClientKnownRequestError) {
-        return noExists();
-      }
       return serverError(error);
     }
   }

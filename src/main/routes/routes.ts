@@ -20,9 +20,7 @@ import { makeUpdateOrderDeliveryController } from "../factories/update-order-del
 export default (router: Router): void => {
   const adminAuth = adaptMiddleware(makeAuthMiddleware("admin"));
   router.get("/register", adaptRoute(makeLoadRegisterController()));
-  //  router.get("/client", adaptRoute(makeLoadClientController()));
   router.get("/orderDelivery", adaptRoute(makeLoadOrdersDeliveryController()));
-  //router.get("/address", adaptRoute(makeLoadAddressController()));
   router.get("/register/:id", adaptRoute(makeLoadRegisterByIdController()));
   router.get(
     "/register/name/:name",
@@ -34,7 +32,7 @@ export default (router: Router): void => {
 
     adaptRoute(makeLoadOrderByIdController())
   );
-  //router.get("/client/:id", adaptRoute(makeLoadOneClientController()));
+
   router.post("/register", adaptRoute(makeAddRegisterController()));
   router.post("/signup", adaptRoute(makeSignupController()));
   router.post("/login", adaptRoute(makeLoginController()));
@@ -49,8 +47,6 @@ export default (router: Router): void => {
     adaptRoute(makeAddOrderDeliveryController())
   );
   router.put("/register/:id", adaptRoute(makeUpdateRegisterController()));
-  // router.put("/client/:id", adaptRoute(makeUpdateClientController()));
-  // router.put("/address/:id", adaptRoute(makeUpdateAddressController()));
   router.put(
     "/orderDelivery/:id",
     adaptRoute(makeUpdateOrderDeliveryController())
@@ -71,16 +67,4 @@ export default (router: Router): void => {
 
     adaptRoute(makeDeleteAccountController())
   );
-
-  /* router.delete(
-    "/address/:id",
-
-    adaptRoute(makeDeleteAddressController())
-  ); */
-
-  // router.delete(
-  //  "/client/:id",
-
-  //// adaptRoute(makeDeleteClientController())
-  // );
 };
